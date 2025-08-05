@@ -20,6 +20,9 @@ function agregarAmigo() {
     } else if ( !nombreValido.test(amigo.value) ){
         error.innerHTML = 'Por favor, ingresa un nombre VALIDO.';
         error.style.display = 'block';
+    } else if (amigos.includes(amigo.value)) {
+        error.innerHTML = 'El nombre ya está en la lista.';
+        error.style.display = 'block';
     } else {
         amigos.push(amigo.value);
         error.style.display = 'none';
