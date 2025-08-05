@@ -32,10 +32,13 @@
 
             <p id="errorSorte" style="display: none; color: red;"></p>
             <div class="button-container">
-                <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
-                    <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
-                    Sortear amigo
-                </button>
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <button class="button-draw" onclick="sortearAmigo()" aria-label="Sortear amigo secreto">
+                        <img src="assets/play_circle_outline.png" alt="Ícono para sortear">
+                        Sortear amigo
+                    </button>
+                    <button class="button-draw" style="background-color: red;" onclick="limpiarLista(); ">Limpiar lista</button>
+                </div>
             </div>
         </section>
     </main>
