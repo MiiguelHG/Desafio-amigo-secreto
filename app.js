@@ -8,6 +8,8 @@ const error = document.getElementById('error');
 const errorSorte = document.getElementById('errorSorte');
 const listaAmigos = document.getElementById('listaAmigos');
 const resultado = document.getElementById('resultado');
+const tablaAmigos = document.getElementById('tablaAmigos');
+const miTabla = document.getElementById('miTabla');
 
 function agregarAmigo() {
     errorSorte.style.display = 'none';
@@ -34,10 +36,31 @@ function listarAmigos() {
     let contenido = '';
 
     amigos.forEach((amigo) => {
-        contenido += `<li>${amigo}</li>`;
+        // contenido += `<li>${amigo}</li>`;
+        contenido += `
+        <tr>
+            <td>${amigo}</td>
+            <td>
+                <button class="button-eliminar" onclick="eliminarAmigo('${amigo}');">Eliminar</button>
+            </td>
+        </tr>
+        `;
     });
 
-    listaAmigos.innerHTML = contenido;
+    // listaAmigos.innerHTML = contenido;
+    tablaAmigos.innerHTML = contenido;
+
+    mostrarTabla();
+}
+
+function eliminarAmigo(eliminar) {
+    amigos.forEach((amigo, index) => {
+        if (amigo === eliminar) {
+            amigos.splice(index, 1);
+        }
+    })
+    mostrarTabla();
+    listarAmigos();
 }
 
 function generarAleatorio() {
@@ -62,4 +85,8 @@ function sortearAmigo() {
     errorSorte.style.display = 'none';
     resultado.innerHTML = '';
     listarAmigos();
+ }
+
+ function mostrarTabla() {
+    (amigos.length > 0) ? miTabla.style.display = 'block' : miTabla.style.display = 'none';
  }

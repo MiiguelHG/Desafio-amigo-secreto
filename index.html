@@ -26,8 +26,23 @@
                 <input type="text" id="amigo" class="input-name" placeholder="Escribe un nombre">
                 <button class="button-add" onclick="agregarAmigo(); listarAmigos();">Añadir</button>
             </div>
+            <div class="input-wrapper">
+                <table id="miTabla" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaAmigos">
+                        <!-- Aquí se agregarán los amigos -->
+                         
+                    </tbody>
+                </table>
+
+            </div>
            
-            <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul>
+            <!-- <ul id="listaAmigos" class="name-list" aria-labelledby="listaAmigos" role="list"></ul> -->
             <ul id="resultado" class="result-list" aria-live="polite"></ul>
 
             <p id="errorSorte" style="display: none; color: red;"></p>
